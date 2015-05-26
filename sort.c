@@ -24,9 +24,9 @@ int main() {
   data.size = 0;
 
   collect_data(&data);
-  printf("Unsorted:\n-------\n\n");
-
+  printf("Unsorted:\n-------\n");
   print_arr(data.data_arr, data.size);
+  printf("\n");
 
   print_algorithm_choices();
   scanf("%i", &algorithm);
@@ -48,7 +48,9 @@ int main() {
       printf("Unrecognised algorithm choice\n");
       return 1;
   }
+  printf("\nSorted:\n-------\n");
   print_arr(data.data_arr, data.size);
+  free(data.data_arr);
   return 0;
 }
 
